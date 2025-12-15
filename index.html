@@ -1,39 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bella Italia - Authentic Italian Restaurant</title>
     <meta name="description" content="Bella Italia. Fresh ingredients, traditional recipes, and warm hospitality.">
-    <meta property="og:title" content="Bella Italia - Authentic Italian Restaurant">
-    <meta property="og:description" content="Bella Italia. Fresh ingredients, traditional recipes, and warm hospitality.">
-    <meta property="og:type" content="restaurant">
-    <meta property="twitter:title" content="Bella Italia - Authentic Italian Restaurant">
-    <meta property="twitter:description" content="Bella Italia - Authentic Italian Restaurant">
     
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/babel-standalone@6/babel.min.js"></script>
-    
-    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.316.0/font/lucide.css" rel="stylesheet">
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script> 
+
     <style>
+        /* Custom Tailwind Configuration using your desired colors */
         :root {
-            /* Tailwind configuration colors for the theme */
-            --primary-color: #AF8B4A; /* A gold/brown color */
-            --secondary-color: #2F3E46; /* A dark blue/grey color */
-            --light-dark: #F2F2F2; /* A light grey color */
-            --text-dark: #2C2C2C; /* A very dark grey/black color */
-            --text-light: #F7F7F7; /* A very light grey/white color */
+            --primary-color: #AF8B4A; /* Gold/Brown */
+            --secondary-color: #2F3E46; /* Dark Blue/Grey */
+            --light-dark: #F2F2F2; /* Light Grey */
+            --text-dark: #2C2C2C; /* Very Dark Grey/Black */
+            --text-light: #F7F7F7; /* Very Light Grey/White */
         }
+        
+        /* Apply custom colors using Tailwind's arbitrary value support */
+        .bg-primary { background-color: var(--primary-color); }
+        .text-primary { color: var(--primary-color); }
+        .hover\:bg-primary-dark:hover { background-color: #9A773B; /* Slightly darker primary */ }
+        .bg-secondary { background-color: var(--secondary-color); }
+        .text-secondary { color: var(--secondary-color); }
 
-        @layer base {
-            /* Base styles for typography */
-            body {
-                font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-                color: var(--text-dark);
-            }
+        /* Custom scroll offset for fixed header */
+        html { scroll-padding-top: 5rem; }
+    </style>
+</head>
 
+<body class="font-sans text-[var(--text-dark)] bg-[var(--light-dark)]">
+
+    <header class="fixed top-0 left-0 w-full bg-white z-50 shadow-md">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 h-20">
+            <a href="#home" class="text-3xl font-serif tracking-wide font-bold text-primary">
+                Bella Italia
+            </a>
+
+            <ul class="hidden md:flex space-x-8 text-lg font-medium">
+                <li><a href="#home" class="hover:text-primary transition-colors duration-300">Home</a></li>
+                <li><a href="#about" class="hover:text-primary transition-colors duration-300">About</a></li>
+                <li><a href="#menu" class="hover:text-primary transition-colors duration-300">Menu</a></li>
+                <li><a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section id="home" class="min-h-[90vh] flex items-center justify-center text-center bg-secondary text-white">
+            <div class="p-8 max-w-4xl">
+                <p class="text-xl text-primary mb-4 tracking-widest uppercase">Experience Authentic Flavors</p>
+                <h1 class="text-6xl md:text-8xl font-serif font-bold mb-6 leading-tight">
+                    Bella Italia
+                </h1>
+                <p class="text-2xl mb-10 max-w-2xl mx-auto text-[var(--text-light)]">
+                    Fresh ingredients, traditional recipes, and warm hospitality since 1998.
+                </p>
+                <a href="#contact" class="px-8 py-4 bg-primary text-white font-semibold text-xl rounded-lg shadow-xl hover:opacity-90 transition-all duration-300">
+                    Book a Table Today
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-5xl font-serif font-bold mb-6 text-primary">Our Passion for Italian Food</h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    Bella Italia was founded on the belief that simple, fresh ingredients create the best food. We honor classic Italian cooking techniques passed down through generations, ensuring every dish is a taste of Italy.
+                </p>
+                <p class="text-lg leading-relaxed text-secondary font-medium">
+                    "La vita è troppo breve per mangiare male." — Life is too short to eat poorly.
+                </p>
+            </div>
+            <div class="md:w-1/2">
+                <div class="bg-gray-300 h-64 rounded-lg shadow-xl flex items-center justify-center">
+                    <i data-lucide="utensils-crossed" class="w-16 h-16 text-gray-600"></i>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="py-20 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-5xl font-serif font-bold text-center mb-12 text-primary">Featured Menu Items</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="p-6 rounded-lg border-2 border-primary shadow-lg">
+                        <h3 class="text-3xl font-serif font-semibold mb-2 text-secondary">Classic Lasagna</h3>
+                        <p class="text-primary mb-4 text-xl">$24</p>
+                        <p class="text-[var(--text-dark)]">Layers of house-made pasta, rich beef ragu, béchamel, and fresh mozzarella.</p>
+                    </div>
+                    <div class="p-6 rounded-lg border-2 border-primary shadow-lg">
+                        <h3 class="text-3xl font-serif font-semibold mb-2 text-secondary">Caprese Salad</h3>
+                        <p class="text-primary mb-4 text-xl">$16</p>
+                        <p class="text-[var(--text-dark)]">Vine-ripened tomatoes, fresh basil, buffalo mozzarella, and aged balsamic glaze.</p>
+                    </div>
+                    <div class="p-6 rounded-lg border-2 border-primary shadow-lg">
+                        <h3 class="text-3xl font-serif font-semibold mb-2 text-secondary">Panna Cotta</h3>
+                        <p class="text-primary mb-4 text-xl">$12</p>
+                        <p class="text-[var(--text-dark)]">Creamy vanilla custard topped with seasonal berry coulis.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-block px-8 py-3 border-2 border-primary text-primary font-semibold text-lg rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
+                        View Full Menu
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 px-6 bg-secondary text-white">
+            <div class="max-w-xl mx-auto text-center">
+                <h2 class="text-5xl font-serif font-bold mb-6 text-primary">Find Us</h2>
+                <p class="text-xl text-[var(--text-light)] mb-8">
+                    Ready for a taste of Italy? Make a reservation or stop by!
+                </p>
+                
+                <div class="p-8 bg-white text-[var(--text-dark)] rounded-lg shadow-xl space-y-4">
+                    <p class="text-lg font-semibold">Location</p>
+                    <p>456 Olive Street, City Center, 10001</p>
+                    
+                    <p class="text-lg font-semibold pt-4">Call Us</p>
+                    <p>(555) 555-BELL</p>
+                    
+                    <a href="mailto:info@bellaitalia.com" class="block pt-4 text-primary hover:text-opacity-80 transition-colors duration-300 font-medium">
+                        Email: info@bellaitalia.com
+                    </a>
+                    
+                    <a href="#" class="mt-6 inline-block px-8 py-3 bg-primary text-white font-bold rounded-lg hover:opacity-90 transition-all duration-300">
+                        Book Online Now
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 px-6 bg-[var(--text-dark)] text-gray-400 text-center">
+        <p>&copy; 2025 Bella Italia. All Rights Reserved. | Crafted with passion.</p>
+        <div class="flex justify-center space-x-4 mt-4">
+            <i data-lucide="instagram" class="w-6 h-6 text-primary"></i>
+            <i data-lucide="facebook" class="w-6 h-6 text-primary"></i>
+        </div>
+    </footer>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
             h1, h2, h3 {
                 color: var(--text-dark);
             }
