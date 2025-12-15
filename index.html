@@ -1,35 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Artisan Workshop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Italia - Authentic Italian Restaurant</title>
+    <meta name="description" content="Bella Italia. Fresh ingredients, traditional recipes, and warm hospitality.">
+    <meta property="og:title" content="Bella Italia - Authentic Italian Restaurant">
+    <meta property="og:description" content="Bella Italia. Fresh ingredients, traditional recipes, and warm hospitality.">
+    <meta property="og:type" content="restaurant">
+    <meta property="twitter:title" content="Bella Italia - Authentic Italian Restaurant">
+    <meta property="twitter:description" content="Bella Italia - Authentic Italian Restaurant">
+    
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/babel-standalone@6/babel.min.js"></script>
+    
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.316.0/font/lucide.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Tailwind configuration colors for the theme */
+            --primary-color: #AF8B4A; /* A gold/brown color */
+            --secondary-color: #2F3E46; /* A dark blue/grey color */
+            --light-dark: #F2F2F2; /* A light grey color */
+            --text-dark: #2C2C2C; /* A very dark grey/black color */
+            --text-light: #F7F7F7; /* A very light grey/white color */
+        }
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+        @layer base {
+            /* Base styles for typography */
+            body {
+                font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                color: var(--text-dark);
+            }
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/main.css" />
+            h1, h2, h3 {
+                color: var(--text-dark);
+            }
+        }
+
+        @layer components {
+            /* Custom component styles */
+            .button-primary {
+                /* Tailwind classes applied: */
+                @apply px-6 py-3 bg-[var(--primary-color)] text-white rounded-lg font-medium hover:opacity-50 transition-all duration-300;
+            }
+
+            .section-title {
+                /* Tailwind classes applied: */
+                @apply mb-12 text-4xl font-bold text-center;
+            }
+        }
+
+        @layer utilities {
+            /* Custom utility classes */
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+        }
+    </style>
 </head>
-<body>
 
-  <!-- Header -->
-  <div id="header"></div>
-
-  <!-- Hero -->
-  <section class="hero fade-in">
-    <h1>Bespoke Furniture & Interiors</h1>
-    <p>Handcrafted furniture and interior design studio based in Bengaluru.</p>
-    <a href="pages/contact.html" class="btn-primary">Get in Touch</a>
-  </section>
-
-  <!-- Footer -->
-  <div id="footer"></div>
-
-  <!-- JS -->
-  <script src="js/utils.js"></script>
-  <script src="js/main.js"></script>
+<body class="scroll-smooth">
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/About.js"></script>
+    <script type="text/babel" src="components/Menu.js"></script>
+    <script type="text/babel" src="components/Testimonials.js"></script>
+    <script type="text/babel" src="components/Contact.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="components/ScrollToTop.js"></script>
+    
+    <script type="text/babel" src="app.js"></script>
 </body>
 </html>
