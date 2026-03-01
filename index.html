@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hrsdesign | School of Branding</title>
+    <title>hrsdesign | School of Branding Siliguri</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -11,33 +11,74 @@
 
     <nav class="navbar">
         <div class="logo">
-            <span class="logo-box">B<span>s</span></span>
-            <span class="brand-name">hrsdesign</span>
+            <span class="logo-box">HRS</span>
         </div>
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+        <ul class="nav-links">
+            <li><span>01.</span> Home</li>
+            <li><span>02.</span> Our Courses</li>
+            <li><span>03.</span> Gallery</li>
+            <li><span>04.</span> Contact Us</li>
+            <li><span>05.</span> Our Blogs</li>
+        </ul>
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <p class="sub-headline">School of</p>
-            <h1 class="main-headline">Branding</h1>
-            <p class="tagline">A Place, to learn & build what you love..</p>
-            
-            <div class="cta-group">
-                <a href="#" class="btn btn-primary">Start Your Journey</a>
-                <a href="#" class="btn btn-outline">Connect With Us</a>
+        <div class="hero-text">
+            <p class="sub">School of</p>
+            <h1>Branding</h1>
+            <p class="desc">A Place, to learn & build what you love..</p>
+            <div class="btns">
+                <a href="#contact" class="btn-lime">Start Your Journey</a>
+                <a href="https://wa.me/919083596000" class="btn-outline">Connect With Us</a>
             </div>
-        </div>
-
-        <div class="hero-visual">
-            <div class="floating-sphere"></div>
-            <img src="https://via.placeholder.com/400x400/0A0A0A/CCFF00?text=3D+Art" alt="Creative Visual">
         </div>
     </section>
 
-    <script src="main.js"></script>
+    <div class="marquee">
+        <div class="marquee-content">
+            <span>VAHDAM</span> <span>TEABOX</span> <span>BOSCH</span> <span>FOXIN</span> <span>GOZNEY</span> <span>BUYCEPS</span>
+        </div>
+    </div>
+
+    <section class="courses">
+        <h2 class="section-title">Our Courses</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="badge">5 Months</div>
+                <h3>Video Editing</h3>
+                <p>Offline - Classroom Based</p>
+                <button>View Details</button>
+            </div>
+            <div class="card">
+                <div class="badge">Practical</div>
+                <h3>Graphic Design</h3>
+                <p>Build a professional portfolio</p>
+                <button>View Details</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-preview">
+        <h2>Brand Stories</h2>
+        <div class="blog-card">
+            <img src="boat-story.jpg" alt="boAt Story">
+            <h3>The Rise of boAt: Aman Gupta</h3>
+            <p>How an Indian brand truly speaks to India...</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="glass-form">
+            <h2>Let's Connect 😊</h2>
+            <input type="text" placeholder="Full Name">
+            <input type="text" placeholder="Contact Number">
+            <button class="btn-lime">Submit</button>
+        </div>
+        <div class="address">
+            <p>Pradhan Building, 2nd Floor, Hakim Para, Siliguri</p>
+            <p>+91 90835-96000</p>
+        </div>
+    </section>
+
 </body>
 </html>
