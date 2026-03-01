@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hrsdesign | School of Branding Siliguri</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">
-            <span class="logo-box">HRS</span>
-        </div>
+        <div class="logo-box">HRS</div>
         <ul class="nav-links">
             <li><span>01.</span> Home</li>
             <li><span>02.</span> Our Courses</li>
@@ -20,65 +18,60 @@
             <li><span>04.</span> Contact Us</li>
             <li><span>05.</span> Our Blogs</li>
         </ul>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </nav>
 
     <section class="hero">
-        <div class="hero-text">
-            <p class="sub">School of</p>
+        <div class="hero-content">
+            <p class="sub-text">School of</p>
             <h1>Branding</h1>
-            <p class="desc">A Place, to learn & build what you love..</p>
-            <div class="btns">
-                <a href="#contact" class="btn-lime">Start Your Journey</a>
-                <a href="https://wa.me/919083596000" class="btn-outline">Connect With Us</a>
+            <p class="tagline">A Place, to learn & build what you love..</p>
+            <div class="cta-btns">
+                <a href="#contact" class="btn btn-filled">Start Your Journey</a>
+                <a href="https://wa.me/919083596000" class="btn btn-outline">Connect With Us</a>
             </div>
         </div>
     </section>
 
     <div class="marquee">
-        <div class="marquee-content">
-            <span>VAHDAM</span> <span>TEABOX</span> <span>BOSCH</span> <span>FOXIN</span> <span>GOZNEY</span> <span>BUYCEPS</span>
+        <div class="marquee-inner">
+            <span>VAHDAM</span><span>TEABOX</span><span>BOSCH</span><span>FOXIN</span><span>GOZNEY</span><span>BUYCEPS</span>
+            <span>VAHDAM</span><span>TEABOX</span><span>BOSCH</span><span>FOXIN</span><span>GOZNEY</span><span>BUYCEPS</span>
         </div>
     </div>
 
     <section class="courses">
-        <h2 class="section-title">Our Courses</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="badge">5 Months</div>
+        <h2 class="outline-head">Our Courses</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <span class="badge">5 Months</span>
                 <h3>Video Editing</h3>
                 <p>Offline - Classroom Based</p>
-                <button>View Details</button>
+                <button class="view-btn">View Details</button>
             </div>
-            <div class="card">
-                <div class="badge">Practical</div>
+            <div class="course-card">
+                <span class="badge">Practical</span>
                 <h3>Graphic Design</h3>
                 <p>Build a professional portfolio</p>
-                <button>View Details</button>
+                <button class="view-btn">View Details</button>
             </div>
-        </div>
-    </section>
-
-    <section class="blog-preview">
-        <h2>Brand Stories</h2>
-        <div class="blog-card">
-            <img src="boat-story.jpg" alt="boAt Story">
-            <h3>The Rise of boAt: Aman Gupta</h3>
-            <p>How an Indian brand truly speaks to India...</p>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <div class="glass-form">
+        <div class="form-container">
             <h2>Let's Connect 😊</h2>
             <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="Contact Number">
-            <button class="btn-lime">Submit</button>
+            <input type="tel" placeholder="Contact Number">
+            <button class="btn-filled">Submit</button>
         </div>
-        <div class="address">
-            <p>Pradhan Building, 2nd Floor, Hakim Para, Siliguri</p>
-            <p>+91 90835-96000</p>
+        <div class="address-box">
+            <h3>Visit Us</h3>
+            <p>2nd Floor, Pradhan Building, Hakim Para, Siliguri</p>
+            <p>Phone: +91 90835-96000</p>
         </div>
     </section>
 
+    <script src="script.js"></script>
 </body>
 </html>
