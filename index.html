@@ -3,205 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hrsgraphic | Digital Design Agency</title>
+    <title>Glow by Zara | Influencer Portfolio</title>
     <style>
-        :root { 
-            --yellow: #FFD700; 
-            --black: #000000; 
-            --white: #ffffff; 
-            --grey: #111111;
+        :root {
+            --primary-color: #ffafbd; /* Soft pink glow */
+            --secondary-color: #ffc3a0;
+            --text-dark: #2d3436;
+            --bg-light: #f9f9f9;
         }
 
-        body { 
-            background: var(--black); 
-            color: var(--white); 
-            margin: 0; 
-            font-family: 'Inter', sans-serif; 
-            overflow-x: hidden; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* --- NAVIGATION --- */
-        .nav-header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 20px 5%; background: var(--black); position: sticky; top: 0; z-index: 2000;
-            border-bottom: 1px solid #222;
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
         }
-        .logo { font-weight: 900; font-size: 1.2rem; letter-spacing: 1px; text-transform: uppercase; }
-        .logo span { color: var(--yellow); }
 
-        .menu-toggle { width: 30px; height: 20px; position: relative; cursor: pointer; z-index: 2101; }
-        .bar { width: 100%; height: 3px; background: var(--yellow); position: absolute; transition: 0.4s; border-radius: 2px; }
-        .bar1 { top: 0; } .bar2 { top: 50%; transform: translateY(-50%); } .bar3 { bottom: 0; }
-        .menu-active .bar1 { transform: rotate(-45deg); top: 9px; }
-        .menu-active .bar2 { opacity: 0; }
-        .menu-active .bar3 { transform: rotate(45deg); bottom: 8px; }
-
-        .nav-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.98); z-index: 2100;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            opacity: 0; visibility: hidden; transition: 0.4s ease-in-out;
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
         }
-        .nav-overlay.open { opacity: 1; visibility: visible; }
-        .overlay-links a { text-decoration: none; color: white; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; margin: 15px 0; display: block; }
 
-        /* --- HERO & SCROLLER --- */
-        .hero { 
-            position: relative; text-align: center; padding: 120px 5%; overflow: hidden; 
-            min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 15px;
+            object-fit: cover;
         }
-        .scroller-container {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
-            display: flex; justify-content: center; opacity: 0.12; pointer-events: none; filter: blur(2px); 
+
+        h1 { font-size: 1.8rem; margin-bottom: 5px; }
+        p.handle { font-style: italic; opacity: 0.9; }
+
+        /* Main Links (The Goal) */
+        .links-container {
+            max-width: 500px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
         }
-        .scroller-column { display: flex; flex-direction: column; animation: scrollVertical 12s linear infinite; }
-        .scroller-column span { font-size: clamp(5rem, 15vw, 12rem); font-weight: 900; text-transform: uppercase; line-height: 1; margin: 15px 0; white-space: nowrap; }
-        @keyframes scrollVertical { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
 
-        .profile-container, .hero h1, .hero p, .tricky-link-container { position: relative; z-index: 2; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        .round-logo { 
-            width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--yellow); 
-            object-fit: cover; animation: float 5s infinite ease-in-out; filter: grayscale(100%);
+        .cta-button {
+            display: block;
+            background: white;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; line-height: 1; margin: 25px 0 10px; }
-        .highlight-box { background: var(--yellow); color: black; padding: 0 10px; }
 
-        /* --- TESTIMONIALS --- */
-        .testimonial-section { background: var(--yellow); color: black; padding: 80px 5%; }
-        .slider-wrapper { overflow: hidden; width: 100%; }
-        .testimonial-container { display: flex; transition: 0.5s ease-in-out; }
-        .testimonial-slide { min-width: 100%; box-sizing: border-box; }
-        .testimonial-slide p { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; border-left: 6px solid black; padding-left: 20px; line-height: 1.2; }
-
-        /* --- FAQ --- */
-        .faq-section { padding: 80px 5%; max-width: 800px; margin: 0 auto; }
-        .faq-section h2 { text-align: center; font-weight: 900; margin-bottom: 40px; font-size: 2rem; }
-        details { background: var(--white); color: black; border-radius: 50px; padding: 20px 30px; margin-bottom: 15px; cursor: pointer; }
-        summary { list-style: none; display: flex; justify-content: space-between; font-weight: 900; text-transform: uppercase; font-size: 0.8rem; }
-
-        /* --- FLOATING START BUTTON --- */
-        .floating-start-btn {
-            position: fixed; bottom: 30px; right: 30px; background: var(--yellow); color: var(--black);
-            text-decoration: none; font-weight: 900; font-size: 0.8rem; padding: 15px 25px; border-radius: 50px;
-            display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
-            z-index: 9999; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            letter-spacing: 1px; animation: pulse 2s infinite;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            background: #fffafa;
         }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); } }
 
-        /* --- FOOTER SOCIALS --- */
-        .quick-links-footer { padding: 80px 5%; background: #080808; text-align: center; border-top: 1px solid #111; }
-        .social-flex { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
-        .social-btn { width: 50px; height: 50px; border-radius: 50%; border: 1px solid #333; display: flex; align-items: center; justify-content: center; background: #111; transition: 0.3s; }
-        .social-btn svg { width: 22px; height: 22px; fill: white; }
-        .social-btn:hover { background: var(--yellow); border-color: var(--yellow); }
-        .social-btn:hover svg { fill: black; }
+        .featured {
+            background: var(--text-dark) !important;
+            color: white !important;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .grid-item {
+            aspect-ratio: 1 / 1;
+            background: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: scale 0.3s;
+        }
+
+        .grid-item:hover img {
+            scale: 1.05;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: #888;
+        }
     </style>
 </head>
 <body>
 
-<a href="https://buymeacoffee.com/rahultamang/e/514899" class="floating-start-btn" target="_blank">
-    START PROJECT
-    <svg viewBox="0 0 24 24" width="18" height="18"><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
-</a>
+    <header>
+        <img src="https://via.placeholder.com/150" alt="Glow by Zara" class="profile-img">
+        <h1>Glow by Zara</h1>
+        <p class="handle">Lifestyle • Beauty • Threads</p>
+    </header>
 
-<header class="nav-header">
-    <div class="logo">HRS<span>GRAPHIC</span></div>
-    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
+    <div class="links-container">
+        <a href="https://www.effectivegatecpm.com/wyn8n3ujda?key=d3357bc73a7ad05a4b904e105af41453" class="cta-button featured">
+            ✨ Exclusive Content Collection
+        </a>
+
+        <a href="https://www.effectivegatecpm.com/zjpy9fhj?key=4fce8f60264bc6f9b9bf1954aaf3856d" class="cta-button">
+            💄 My Beauty Recommendations
+        </a>
     </div>
-</header>
 
-<nav class="nav-overlay" id="navOverlay" onclick="closeMenuOutside(event)">
-    <div class="overlay-links">
-        <a href="work.html">Work</a>
-        <a href="about-me.html">About</a>
-        <a href="blog.html">Blogs</a>
-        <a href="contact.html">Contact</a>
-    </div>
-</nav>
-
-<section class="hero">
-    <div class="scroller-container">
-        <div class="scroller-column">
-            <span>Creative</span><span>Perfect</span><span>hrsgraphic</span><span>Strategy</span><span>Motion</span><span>Design</span>
-            <span>Creative</span><span>Perfect</span><span>Siliguri</span><span>Strategy</span><span>Motion</span><span>Design</span>
+    <section class="gallery-section">
+        <h2 class="gallery-title">Latest Feed</h2>
+        <div class="grid">
+            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
+            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
+            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
+            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
+            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
+            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
         </div>
-    </div>
+    </section>
 
-    <div class="profile-container">
-        <a href="https://ibb.co/8nxxwWDC" target="_blank">
-            <img src="https://i.ibb.co/BH66JXVp/Picsart-26-02-28-16-43-59-477-1.jpg" alt="hrsgraphic" class="round-logo">
-        </a>
-    </div>
-    <h1>BE IMPOSSIBLE TO <br><span class="highlight-box">IGNORE.</span></h1>
-    <p style="opacity: 0.6; margin-top: 20px;">Strategy & Design powered by hrsgraphic.</p>
-
-    <div class="tricky-link-container" style="margin-top: 15px;">
-        <a href="https://www.effectivegatecpm.com/wyn8n3ujda?key=d3357bc73a7ad05a4b904e105af41453" target="_blank" style="font-size: 0.7rem; color: var(--yellow); text-decoration: underline; letter-spacing: 2px; text-transform: uppercase; font-weight: 900;">
-            VIEW ARCHIVED PORTFOLIO [2026]
-        </a>
-    </div>
-</section>
-
-<section class="testimonial-section">
-    <div class="slider-wrapper">
-        <div class="testimonial-container" id="testimonialSlider">
-            <div class="testimonial-slide"><p>"Hands-on approach provided me with invaluable brand growth." <br>— AYUSHI</p></div>
-            <div class="testimonial-slide"><p>"Best SEO results in Siliguri. My shop is finally on Page 1." <br>— RAHUL K.</p></div>
-            <div class="testimonial-slide"><p>"Clean, professional, and fast. Exceptional digital work." <br>— PRIYA S.</p></div>
-        </div>
-    </div>
-    <div style="margin-top: 30px;">
-        <button onclick="moveSlide(-1)" style="background:black; color:white; border:none; width:45px; height:45px; border-radius:50%; cursor:pointer;">←</button>
-        <button onclick="moveSlide(1)" style="background:black; color:white; border:none; width:45px; height:45px; border-radius:50%; cursor:pointer; margin-left:10px;">→</button>
-    </div>
-</section>
-
-<section class="faq-section">
-    <h2>FREQUENTLY ASKED</h2>
-    <div class="faq-grid">
-        <details><summary>What is hrsgraphic? <span>+</span></summary><p>A premium digital agency focusing on high-end strategy and design.</p></details>
-        
-        <details>
-            <summary>Do you offer free design assets? <span style="color:var(--yellow);">YES</span></summary>
-            <p>I release free UI kits and design assets monthly. You can download the latest 2026 package <a href="https://www.effectivegatecpm.com/zjpy9fhj?key=4fce8f60264bc6f9b9bf1954aaf3856d" target="_blank" style="color:var(--yellow); font-weight:900;">DIRECTLY HERE</a>.</p>
-        </details>
-        
-        <details><summary>Do you have a physical office? <span>+</span></summary><p>I operate digitally and do not have an offline office.</p></details>
-    </div>
-</section>
-
-<section class="quick-links-footer">
-    <div class="social-flex">
-        <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg></a>
-        
-        <a href="https://www.effectivegatecpm.com/zjpy9fhj?key=4fce8f60264bc6f9b9bf1954aaf3856d" class="social-btn" target="_blank" title="Download Assets">
-            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-        </a>
-    </div>
-    <footer style="margin-top: 50px; opacity: 0.3; font-size: 0.7rem;">© 2026 hrsgraphic | All Rights Reserved</footer>
-</section>
-
-<script>
-    function toggleMenu() {
-        const toggle = document.getElementById('menuToggle');
-        const overlay = document.getElementById('navOverlay');
-        toggle.classList.toggle('menu-active');
-        overlay.classList.toggle('open');
-        document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : 'auto';
-    }
-    function closeMenuOutside(e) { if (e.target.id === "navOverlay") { toggleMenu(); } }
-    let current = 0;
-    function moveSlide(n) {
-        const slides = document.querySelectorAll('.testimonial-slide');
-        current = (current + n + slides.length) % slides.length;
-        document.getElementById('testimonialSlider').style.transform = `translateX(-${current * 100}%)`;
-    }
-</script>
+    <footer>
+        &copy; 2026 Glow by Zara. All rights reserved.
+    </footer>
 
 </body>
 </html>
