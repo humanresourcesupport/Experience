@@ -3,161 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow by Zara | Influencer Portfolio</title>
+    <title>Personal Brand Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #ffafbd; /* Soft pink glow */
-            --secondary-color: #ffc3a0;
-            --text-dark: #2d3436;
-            --bg-light: #f9f9f9;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Header Section */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid white;
-            margin-bottom: 15px;
-            object-fit: cover;
-        }
-
-        h1 { font-size: 1.8rem; margin-bottom: 5px; }
-        p.handle { font-style: italic; opacity: 0.9; }
-
-        /* Main Links (The Goal) */
-        .links-container {
-            max-width: 500px;
-            margin: -30px auto 40px;
-            padding: 0 20px;
-        }
-
-        .cta-button {
-            display: block;
-            background: white;
-            color: var(--text-dark);
-            text-decoration: none;
-            padding: 18px;
-            margin-bottom: 15px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            background: #fffafa;
-        }
-
-        .featured {
-            background: var(--text-dark) !important;
-            color: white !important;
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .gallery-title {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .grid-item {
-            aspect-ratio: 1 / 1;
-            background: #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .grid-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: scale 0.3s;
-        }
-
-        .grid-item:hover img {
-            scale: 1.05;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.8rem;
-            color: #888;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
+        .font-heading { font-family: 'Bebas Neue', cursive; }
+        .text-cyan { color: #00f2ff; }
+        .bg-cyan { background-color: #00f2ff; }
+        .border-cyan { border-color: #00f2ff; }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://via.placeholder.com/150" alt="Glow by Zara" class="profile-img">
-        <h1>Glow by Zara</h1>
-        <p class="handle">Lifestyle • Beauty • Threads</p>
-    </header>
+    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
+        <div class="font-heading text-3xl tracking-widest">HRS</div>
+        <div class="space-x-8 hidden md:flex uppercase text-xs tracking-widest">
+            <a href="#" class="hover:text-cyan">About</a>
+            <a href="#" class="hover:text-cyan">Portfolio</a>
+            <a href="#" class="hover:text-cyan">Contact</a>
+        </div>
+        <button class="border border-white px-6 py-2 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition">Let's Talk</button>
+    </nav>
 
-    <div class="links-container">
-        <a href="https://www.effectivegatecpm.com/wyn8n3ujda?key=d3357bc73a7ad05a4b904e105af41453" class="cta-button featured">
-            ✨ Exclusive Content Collection
-        </a>
-
-        <a href="https://www.effectivegatecpm.com/zjpy9fhj?key=4fce8f60264bc6f9b9bf1954aaf3856d" class="cta-button">
-            💄 My Beauty Recommendations
-        </a>
-    </div>
-
-    <section class="gallery-section">
-        <h2 class="gallery-title">Latest Feed</h2>
-        <div class="grid">
-            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/400" alt="Zara Post"></div>
+    <section class="relative h-[90vh] flex flex-col items-center justify-center text-center px-4">
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1920" alt="Hero" class="w-full h-full object-cover grayscale">
+        </div>
+        
+        <div class="relative z-10">
+            <p class="uppercase tracking-[0.5em] text-sm mb-4">Graphic Designer & Marketer</p>
+            <h1 class="font-heading text-8xl md:text-[12rem] leading-none mb-6">RAHUL <span class="text-cyan">TAMANG</span></h1>
+            <p class="max-w-xl mx-auto text-gray-400 text-lg">
+                Building digital experiences and communities. Inspiring change through design and strategic marketing.
+            </p>
         </div>
     </section>
 
-    <footer>
-        &copy; 2026 Glow by Zara. All rights reserved.
+    <section class="py-20 bg-zinc-950 border-y border-zinc-900">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <h3 class="font-heading text-5xl text-cyan">14K+</h3>
+                <p class="uppercase text-xs tracking-widest text-gray-500">Reach</p>
+            </div>
+            <div>
+                <h3 class="font-heading text-5xl">100+</h3>
+                <p class="uppercase text-xs tracking-widest text-gray-500">Projects</p>
+            </div>
+            <div>
+                <h3 class="font-heading text-5xl text-cyan">2016</h3>
+                <p class="uppercase text-xs tracking-widest text-gray-500">Est.</p>
+            </div>
+            <div>
+                <h3 class="font-heading text-5xl">5+</h3>
+                <p class="uppercase text-xs tracking-widest text-gray-500">Platforms</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-7xl mx-auto px-6">
+        <h2 class="font-heading text-6xl mb-12">FEATURED <span class="text-cyan">SERVICES</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+            <div class="group relative aspect-square bg-zinc-900 overflow-hidden border border-zinc-800">
+                <div class="absolute inset-0 flex flex-col justify-end p-8 z-10">
+                    <h4 class="font-heading text-3xl">Brand Identity</h4>
+                    <p class="text-cyan text-sm">Visual Storytelling</p>
+                </div>
+            </div>
+            <div class="group relative aspect-square bg-zinc-800 overflow-hidden border border-zinc-700">
+                <div class="absolute inset-0 flex flex-col justify-end p-8 z-10">
+                    <h4 class="font-heading text-3xl">UI/UX Design</h4>
+                    <p class="text-cyan text-sm">Modern Interfaces</p>
+                </div>
+            </div>
+            <div class="group relative aspect-square bg-zinc-900 overflow-hidden border border-zinc-800">
+                <div class="absolute inset-0 flex flex-col justify-end p-8 z-10">
+                    <h4 class="font-heading text-3xl">Digital Strategy</h4>
+                    <p class="text-cyan text-sm">Growth Marketing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pt-20 pb-10 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="font-heading text-[15vw] leading-none text-center tracking-tighter mb-10 opacity-10">HRSDESIGN</h1>
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs uppercase tracking-widest">
+                <p>&copy; 2026 RAHUL TAMANG. ALL RIGHTS RESERVED.</p>
+                <div class="flex space-x-6 mt-6 md:mt-0">
+                    <a href="#" class="hover:text-cyan">Instagram</a>
+                    <a href="#" class="hover:text-cyan">LinkedIn</a>
+                    <a href="#" class="hover:text-cyan">YouTube</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>
 </html>
+
